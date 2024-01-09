@@ -4,7 +4,6 @@ const appError = require("../utils/appErrors");
 const catchAsync = require("../utils/catchAsync");
 
 exports.getAllPets = catchAsync(async (req, res, next) => {
-
     const queryString = req.query
 
     // queries

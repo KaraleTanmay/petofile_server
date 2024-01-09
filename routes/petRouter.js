@@ -5,9 +5,11 @@ const petController = require('../controllers/petController');
 // implementing router
 const petRouter = express.Router();
 
+petRouter.use(authController.protected);
+
 petRouter
     .route("/")
-    .get(authController.protected, petController.getAllPets)
+    .get(petController.getAllPets)
     .post(petController.createPet)
 
 petRouter.use(authController.protected)
