@@ -24,6 +24,14 @@ if (process.env.node_env === 'developement') {
     app.use(morgan("dev"));
 }
 
+const logRequest = (req, res, next) => {
+    console.log(req.method)
+    console.log(req.originalUrl)
+    next()
+}
+
+app.use("*", logRequest)
+
 app.use("/users", userRouter)
 app.use("/pets", petRouter)
 
