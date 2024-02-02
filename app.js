@@ -9,12 +9,12 @@ const petRouter = require('./routes/petRouter');
 // creating app using express instance
 const app = express();
 
-// app.use(
-//     cors({
-//         origin: "*",
-//         credentials: true,
-//     })
-// );
+app.use(
+    cors({
+        origin: "*",
+        credentials: true,
+    })
+);
 
 // adding middleware to acces body of post requests
 app.use(express.json())
